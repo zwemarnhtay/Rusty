@@ -3,7 +3,7 @@ fn main() {
     mutable_variable();
 }
 
-// when we run below code, we got error[E0384]: cannot assign twice to immutable variable `x`
+// when we run below immutable_variable() function, we got error[E0384]: cannot assign twice to immutable variable `x`
 // due to variable is immutable
 // fn immutable_variable() {
 //     let x = "hello";
