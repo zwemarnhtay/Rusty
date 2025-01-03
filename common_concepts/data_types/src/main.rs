@@ -1,3 +1,5 @@
+use std::io;
+
 fn main() {
     let a: &str = "this is string";  // or we can use ' let a = "this is string" '
     println!("{a}");
@@ -11,9 +13,13 @@ fn main() {
     let f: bool = true;
     println!("{t} & {f}");
 
-    integer_types();
-    floating_points();
-    numeric_operations();
+    // integer_types();
+    // floating_points();
+    // numeric_operations();
+    tuples();
+    array_type();
+
+    arr_sample();
 }
 
 fn integer_types(){
@@ -30,7 +36,6 @@ fn integer_types(){
     let ans: i8 = x - y;
     println!("ans: {ans}");
 }
-
 
 fn floating_points(){
     let a = 3.0; // default => f64 (8 bytes)
@@ -67,4 +72,46 @@ fn numeric_operations(){
 
     let reminder = 5 % 2;
     println!("reminder : {reminder}")
+}
+
+fn tuples(){
+    let tup = ('A', "Hello", -555, 783.68, true);
+    println!("{}", tup.0);
+
+    let (_a, _b, c, _d, _e) = tup;
+    println!("c : {c}");
+
+    let hello = tup.1;
+    println!("{hello}");
+}
+
+fn array_type(){
+    let mut arr = [1, 2, 3, 4, 5];
+    println!("{}", arr[0]);
+
+    let arr: [f64; 2]  = [2.1, 91.99];
+    println!("{}", arr[1]);
+
+    let str_arr = ["rust"; 3]; // => ["rust", "rust", "rust"]
+    println!("{}", str_arr[2]);
+}
+
+fn arr_sample(){
+    let arr = [1, 2, 3, 4, 5];
+
+    println!("Enter an index");
+
+    let mut index = String::new();
+
+    io::stdin()
+        .read_line(&mut index)
+        .expect("Failed to read line");
+
+    let index: usize = index
+        .trim()
+        .parse()
+        .expect("index must be a number");
+
+    let element = arr[index];
+    println!("The value of the element at index {index} is: {element}");
 }

@@ -16,3 +16,43 @@ Rust has signed integer type `i8` and unsigned integer type `u8`. In this case, 
 ## Floating points
 
 Rust has only two primitive types: `f32` and `f64` for floating points then, default is  `f64`.
+
+## Tuples
+
+Tuple is a collection of values of different data types and it has **fixed length**: once declared, they cannot grow or shrink in size.
+
+Tuples can be created like below:
+
+```Rust
+let tup1 = ('A', 32, -99, 78.5, false);
+
+let tup2 (char, u8, i8, f32, bool) = ('A', 32, -99, 78.5, false);
+
+let tup3 = ('A', 32u8, -99i8, 78.5f32, false);
+```
+
+The first index in tuple is `0` and we can take tuple's member by using a period `.`.
+
+```rust
+let first_member = tup1.0; // A
+```
+
+## Array
+
+Array must have **the same data type** for its element and Rust's array have **fixed length**.
+
+Array can be created below:
+
+```rust
+let arr1 = ['a', 'b', 'c'];
+
+let arr2: [i32; 5] = [123, 456, 789, 11, 321];
+```
+
+Array that contain same value for all elements can be created below:
+
+```rust
+let same_val_arr: [3; '🦀'] //['🦀', '🦀', '🦀']
+```
+
+We can use `arr[0]` to take first element in array.
